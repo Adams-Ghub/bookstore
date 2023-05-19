@@ -19,6 +19,7 @@
       "react/react-in-jsx-scope": "off",
       "import/no-unresolved": "off",
       "react/forbid-prop-types":"off",
+      "camelcase":"off",
       "no-unused-vars":"off",
       "no-shadow": "off"
     },
