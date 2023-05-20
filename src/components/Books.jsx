@@ -6,7 +6,7 @@ import { getAllBooks } from '../redux/books/booksSlice';
 import styles from '../styles/Books.module.css';
 
 const Books = () => {
-  const { books, isLoading } = useSelector((state) => state.books);
+  const { books, isLoading, error } = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const booksArray = Object.keys(books);
   useEffect(() => {
@@ -15,8 +15,16 @@ const Books = () => {
 
   if (isLoading) {
     return (
-      <div className="loading">
+      <div className={styles.loading}>
         <h1>Loading...</h1>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.error}>
+        <h1>Oops!!! something went wrong</h1>
       </div>
     );
   }

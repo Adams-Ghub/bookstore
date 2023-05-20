@@ -52,6 +52,7 @@ export const deleteBook = createAsyncThunk(
 const initialState = {
   books: {},
   isLoading: true,
+  error: false,
 };
 
 const booksSlice = createSlice({
@@ -65,9 +66,13 @@ const booksSlice = createSlice({
       state.isLoading = false;
       state.books = action.payload || {};
     });
+    builder.addCase(getAllBooks.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = true;
+    });
     builder.addCase(addBook.fulfilled, (state, { payload }) => {
       const {
-        title, author, item_id, category,
+        title, author, category,
       } = payload;
       state.books = {
         ...state.books,

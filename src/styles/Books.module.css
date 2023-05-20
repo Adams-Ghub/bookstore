@@ -4,3 +4,9 @@
   background-color: #fafafa;
   padding: 2rem 0 0 0;
 }
+
+.loading,
+.error {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
