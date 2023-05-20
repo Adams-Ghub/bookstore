@@ -18,6 +18,7 @@ const BookList = ({ allBooks }) => {
         <BookItem
           title={element.title}
           author={element.author}
+          category={element.category}
           id={item}
           key={item}
         />
