@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import BookList from './BookList';
 import AddBookForm from './AddBookForm';
 import { getAllBooks } from '../redux/books/booksSlice';
+import styles from '../styles/Books.module.css';
 
 const Books = () => {
   const { books, isLoading } = useSelector((state) => state.books);
@@ -21,7 +22,7 @@ const Books = () => {
   }
 
   return (
-    <div>
+    <div className={styles['main-container']}>
       <BookList allBooks={booksArray} />
       <AddBookForm />
     </div>
