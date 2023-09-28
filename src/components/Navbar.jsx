@@ -5,15 +5,17 @@ import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => (
   <div className={styles['main-container']}>
-    <h2 className={styles['text-logo']}>Bookstore CMS</h2>
-    <nav className={styles['menu-container']}>
-      <Link className={styles['books-link']} to="/">
-        Books
-      </Link>
-      <Link className={styles['category-link']} to="/categories">
-        Categories
-      </Link>
-    </nav>
+    <div className={styles['logo-menu-container']}>
+      <h2 className={styles['text-logo']}>Bookstore CMS</h2>
+      <nav className={styles['menu-container']}>
+        <Link className={styles['books-link']} to="/">
+          Books
+        </Link>
+        <Link className={styles['category-link']} to="/categories">
+          Categories
+        </Link>
+      </nav>
+    </div>
     <div className={styles['navbar-icn-box']}>
       <ImUser />
     </div>
